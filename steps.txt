@@ -1,53 +1,68 @@
-CC SEE Lab steps
+CC SEE Lab Setup Guide
 
-1 install nodejs and npm  (install from website)
-  sudo apt install nodejs npm -y
+1. Install Node.js and npm
 
-2 install amplify cli 
- npm cache clean --force
- npm install -g @aws-amplify/cli
+Install Node.js and npm on your system:
+sudo apt install nodejs npm -y
+(Alternatively, download from the official Node.js website.)
 
-3  create iam user
-   and create access keys
+2. Install AWS Amplify CLI
+npm cache clean --force
+npm install -g @aws-amplify/cli
 
-4 amplify initialise now
-  amplify init
-  enter the required details like access id and secret access  key id and region
+3. Create IAM User
+Go to AWS IAM Console.
 
-5 Add Cognito Authentication
-  amplify add auth
-  default config
-  email
-  done
-  
+Create a new IAM user with programmatic access.
 
-6 deploy the authentication backend to AWS now.
-  amplify push
-  
-7 Integrate Cognito Auth in Your React App
-  npm install aws-amplify @aws-amplify/ui-react
+Assign the necessary permissions.
 
-8 run react project
-  npm run dev
-  
-9 create EC2
+Download Access Key ID and Secret Access Key.
 
-10 create RDS db
+4. Initialize Amplify
+amplify init
+Enter project details.
+Provide Access Key ID, Secret Access Key, and AWS Region.
 
-11 got to rds and connect ec2 to it
-  
-11 connect ec2 
-  clone the git repoor
-  git clone https://github.com/gallant-giri/placify.git 
-  sudo apt update
-  sudo apt install nodejs npm -y
-  sudo apt install mysql-client -y
-  npm install express
+5. Add Cognito Authentication
+amplify add auth
+Choose Default configuration.
+Sign-in method: Email.
+Complete setup.
 
-12 creating db schema
-  CREATE DATABASE IF NOT EXISTS placify;
-  USE placify;
-  CREATE TABLE experiences (
+6. Deploy Authentication Backend
+amplify push
+
+7. Integrate Cognito Auth into React App
+npm install aws-amplify @aws-amplify/ui-react
+
+8. Run React Project
+npm run dev
+
+9. Create EC2 Instance
+Launch an EC2 instance.
+Ensure Security Group allows inbound HTTP (port 80) and custom API port (e.g., 4000).
+
+10. Create RDS Database
+Launch an RDS MySQL instance.
+Make it publicly accessible (or accessible to EC2 security group).
+
+11. Connect EC2 to RDS
+On EC2:
+git clone https://github.com/Abhishek-PJ/Placify.git
+sudo apt update
+sudo apt install nodejs npm -y
+sudo apt install mysql-client -y
+npm install express
+
+12. Create Database Schema
+Login to MySQL from EC2:
+mysql -h <RDS-endpoint> -u admin -p
+Run:
+CREATE DATABASE IF NOT EXISTS placify;
+USE placify;
+
+CREATE TABLE experiences (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id VARCHAR(255),
   company VARCHAR(255),
@@ -55,32 +70,41 @@ CC SEE Lab steps
   description TEXT,
   file_key VARCHAR(512),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-  ); 
+);
+
+13. Configure Environment Variables
+Go to cd placify/backend and create nano .env and add credentials
+DB_HOST=<RDS-endpoint>
+DB_USER=placify
+DB_PASSWORD=<your-password>
+DB_NAME=placify
+PORT=4000
 
 
-13 creating .env in backend
-  DB_HOST=
-  DB_USER=placify 
-  DB_PASSWORD=your password
-  DB_NAME=placify
-  PORT=4000
-  
-  and also in front end create .env and set VITE_API_BASE_URL  
+14. Run Backend Server
+node index.js
 
-14 run backend server
-  node index.js
+15. Test API
+Open in browser or Postman:
+http://<EC2-public-ip>/api/experiences
 
-15 to check working or not
-  http://EC2-public-ip/api/experiences
-  if still not working create elastic ip , associate it and give that
+16. Enable File Uploads
+amplify add storage
+amplify push
 
+17. Final Frontend .env
+VITE_API_BASE_URL=http://<EC2-public-ip>:4000
 
-16 for file uploads
-  amplify add storage
-  amplify push
-
+18. Grant MySQL Permissions(Only if application is not working)
+Login as admin in RDS:
+CREATE USER IF NOT EXISTS 'placify'@'%' IDENTIFIED BY 'Jaisriram7$';
+GRANT ALL PRIVILEGES ON placify.* TO 'placify'@'%';
+FLUSH PRIVILEGES;
 
 
 
 
 
+
+
+Do you want me
