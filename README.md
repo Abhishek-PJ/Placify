@@ -60,7 +60,7 @@ graph TD
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/gallant-giri/placify.git
+   git clone https://github.com/Abhishek-PJ/Placify.git
    cd placify
    ```
 
@@ -203,7 +203,7 @@ The dashboard provides valuable insights into campus placement trends:
 
 ## 📞 Support
 
-For support, email [your-email] or create an issue in the repository.
+For support, email abhia7535@gmail.com or create an issue in the repository.
 
 ## 📄 License
 
