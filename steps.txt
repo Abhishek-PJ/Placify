@@ -101,10 +101,3 @@ CREATE USER IF NOT EXISTS 'placify'@'%' IDENTIFIED BY 'Jaisriram7$';
 GRANT ALL PRIVILEGES ON placify.* TO 'placify'@'%';
 FLUSH PRIVILEGES;
 
-
-
-
-
-
-
-Do you want me
