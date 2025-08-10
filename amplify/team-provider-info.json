@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-placify-dev-f928d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::234273295063:role/amplify-placify-dev-f928d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::234273295063:role/amplify-placify-dev-f928d-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-placify-dev-f928d-deployment",
+      "UnauthRoleName": "amplify-placify-dev-f928d-unauthRole",
+      "StackName": "amplify-placify-dev-f928d",
+      "StackId": "arn:aws:cloudformation:ap-south-1:234273295063:stack/amplify-placify-dev-f928d/34531280-75e7-11f0-9284-028d33797195",
+      "AmplifyAppId": "d258d21htnajgy"
+    },
+    "categories": {
+      "auth": {
+        "placify7b8d2e98": {}
+      },
+      "storage": {
+        "placifyresources": {}
+      }
+    }
+  }
+}

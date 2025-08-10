@@ -1,0 +1,75 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-placify-dev-f928d-authRole",
+      "UnauthRoleArn": "arn:aws:iam::234273295063:role/amplify-placify-dev-f928d-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::234273295063:role/amplify-placify-dev-f928d-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-placify-dev-f928d-deployment",
+      "UnauthRoleName": "amplify-placify-dev-f928d-unauthRole",
+      "StackName": "amplify-placify-dev-f928d",
+      "StackId": "arn:aws:cloudformation:ap-south-1:234273295063:stack/amplify-placify-dev-f928d/34531280-75e7-11f0-9284-028d33797195",
+      "AmplifyAppId": "d258d21htnajgy"
+    }
+  },
+  "auth": {
+    "placify7b8d2e98": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-placify-dev-f928d-deployment/amplify-cfn-templates/auth/placify7b8d2e98-cloudformation-template.json",
+        "logicalId": "authplacify7b8d2e98"
+      },
+      "lastPushTimeStamp": "2025-08-10T12:45:16.628Z",
+      "output": {
+        "UserPoolId": "ap-south-1_kUmrBF7I2",
+        "AppClientIDWeb": "itt4pufff1oclcso7hnb2n1lk",
+        "AppClientID": "3crgnvqqhd1a82biiq6v44ed2t",
+        "IdentityPoolId": "ap-south-1:1ab643c8-6ebf-4b9c-a711-e783838b54e1",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-south-1:234273295063:userpool/ap-south-1_kUmrBF7I2",
+        "IdentityPoolName": "placify7b8d2e98_identitypool_7b8d2e98__dev",
+        "UserPoolName": "placify7b8d2e98_userpool_7b8d2e98"
+      },
+      "lastPushDirHash": "vlq1h26jjkCZQ54kHVlQ6qmOaZg="
+    }
+  },
+  "storage": {
+    "placifyresources": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2025-08-10T12:45:16.628Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-placify-dev-f928d-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storageplacifyresources"
+      },
+      "output": {
+        "BucketName": "placifyresourcesf928d-dev",
+        "Region": "ap-south-1"
+      },
+      "lastPushDirHash": "4wZQ+vL1ONQIorlUeLUwVxUjDik="
+    }
+  }
+}
